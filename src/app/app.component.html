@@ -3,3 +3,13 @@
     <li (click)="getProductInfo(category.value)" *ngFor="let category of categories">{{category.caption}}</li>
   </ul>
 </div>
+<div class = preview-container>
+  <div *ngFor="let product of productInfo" class="item-preview">
+  <img class = "image" #img src="{{product.image_link}}" (error)="img.src = 'https://image.freepik.com/free-vector/404-error-web-template-with-mad-cat_23-2147763345.jpg'">
+   <p><b>{{product.brand}}</b></p>
+    <i>{{product.name}}</i>
+    <div class="color-panel">
+      <div class="color"  *ngFor="let color of product.product_colors" [ngStyle]="{ 'background-color': color.hex_value }"></div>
+    </div>
+  </div>
+</div>

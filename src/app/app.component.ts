@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {MakeupService} from "./makeup.service";
 import {subscribeOn} from "rxjs/operators";
+import {Makeup} from "./makeup.interface";
 
 @Component({
   selector: 'app-root',
@@ -16,13 +17,14 @@ export class AppComponent {
     { caption: 'Eyeshadow', value: 'eyeshadow' },
     { caption: 'Mascara', value: 'mascara' }
   ];
-
+  productInfo: Makeup[] = [];
   constructor (private makeupService: MakeupService) {
   }
 
   getProductInfo(value: string){
     this.makeupService.getMakeUpInfo(value).subscribe( res => {
-      console.log(res)
+      this.productInfo = res
     })
   }
+
 }
