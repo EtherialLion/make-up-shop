@@ -1,0 +1,23 @@
+.top-menu {
+  background-color: black;
+
+  .product-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    padding: 5px;
+    color: white;
+
+    li {
+      border: rgba(255, 255, 255, 0.2) solid 1px;
+      margin: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+
+      &:hover {
+        border-color: white;
+      }
+    }
+  }
+}

@@ -1,1 +1,5 @@
-Hello world!
+<div class="top-menu">
+  <ul class="product-list">
+    <li (click)="getProductInfo(category.value)" *ngFor="let category of categories">{{category.caption}}</li>
+  </ul>
+</div>
